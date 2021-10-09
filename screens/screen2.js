@@ -1,12 +1,11 @@
 import React from "react";
 import { StyleSheet, Text, View, Button } from "react-native";
 
-function HomeScreen() {
+function Screen2({ navigation }) {
   return (
     <View style={styles.container}>
-      <Text>If you can see this message then the app is working!</Text>
-      <Text>Pretty cool, right?</Text>
-      {/* <StatusBar style="auto" /> */}
+      <Text>Screen2</Text>
+      <Button title="Click Here" onPress {...() => alert("Button CLicked!")} />
     </View>
   );
 }
@@ -20,4 +19,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default HomeScreen;
+export default Screen2;
