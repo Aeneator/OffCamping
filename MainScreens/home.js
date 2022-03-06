@@ -59,8 +59,12 @@ function Home({ navigation }) {
 
   return (
     <View style={styles.screen}>
+      <CHeader
+        titleText={"Camping 101"}
+        HeaderStyle={{ position: "relative" }}
+      />
       <FlatList
-        contentContainerStyle={{ paddingTop: StatusBar.currentHeight * 1.3 }}
+        contentContainerStyle={{ paddingTop: StatusBar.currentHeight }}
         data={informatii}
         renderItem={renderItem}
         showsVerticalScrollIndicator={false}
@@ -68,12 +72,11 @@ function Home({ navigation }) {
           <CText
             text="Regiuni"
             style={{
-              fontSize: 45,
-              color: "black",
-              marginTop: 10,
+              fontSize: width / 7,
+              color: Colors.Primary,
               textShadowColor: "rgba(0,0,0,0.2)",
               textAlign: "center",
-              marginBottom: "3%",
+              marginBottom: "4%",
             }}
           />
         }

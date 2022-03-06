@@ -74,7 +74,7 @@ const OptionsScreen = ({
             height: "90%",
             width: "90%",
             backgroundColor: OptionsBG ? "white" : "rgba(0, 0, 0, 0)",
-            borderRadius: 20,
+            borderRadius: 10,
             overflow: "hidden",
           }}
         >
@@ -227,7 +227,7 @@ const styles = StyleSheet.create({
     marginRight: 15,
     marginLeft: 15,
     borderRadius: 360,
-    elevation: 5,
+    elevation: 10,
     borderWidth: 2,
     borderColor: "rgba(0,0,0,0.05)",
   },
@@ -235,11 +235,6 @@ const styles = StyleSheet.create({
     textShadowColor: "gray",
     textShadowOffset: { width: -1.4, height: 1.4 },
     textShadowRadius: 1,
-  },
-  picker: {
-    width: "20%",
-    height: "40%",
-    backgroundColor: "blue",
   },
 });
 

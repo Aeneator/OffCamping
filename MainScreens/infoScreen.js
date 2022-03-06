@@ -9,7 +9,7 @@ import {
   Image,
 } from "react-native";
 
-function Screen3({ navigation }) {
+function infoScreen({ navigation }) {
   const [textLuis, setText] = useState("");
   const { height, width } = useWindowDimensions();
 
@@ -32,4 +32,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Screen3;
+export default infoScreen;

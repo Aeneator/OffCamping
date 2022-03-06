@@ -41,7 +41,7 @@ function MapScreen({ route, navigation }) {
   const [FullLocationPopUp, setFullLocationPopUp] = useState(false);
 
   // Markers
-  const [Radius, setRadius] = useState(10000); // Raza este in metri
+  const [Radius, setRadius] = useState(50000); // Raza este in metri
   const [UserCenter, setUserCenter] = useState({ latitude: 0, longitude: 0 });
   const [MarkerInfo, setMarkerInfo] = useState({
     title: "",

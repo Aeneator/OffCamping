@@ -5,28 +5,30 @@ import { Ionicons } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
-import Home from "../screens/home";
-import MapScreen from "../screens/map";
-import CampGuide from "../screens/campGuide";
-import Screen3 from "../screens/screen3";
-import Screen4 from "../screens/screen4";
+import Home from "./home";
+import MapScreen from "./map";
+import CampGuide from "./campGuide";
+import infoScreen from "./infoScreen";
+
 import Colors from "../CustomObjects/Colors";
 
 const Tab = createBottomTabNavigator();
 
-const IconSize = 25;
-const IconFocusedColor = "rgb(160, 202, 242)";
+const IconFocusedColor = Colors.Primary2;
+const IconSize = 20;
 const IconColor = Colors.White;
 
 const Tabs = () => {
+  //var IconSize = "20%";
   return (
     <Tab.Navigator
       screenOptions={{
         headerShown: false,
-        tabBarActiveTintColor: "rgb(160, 202, 242)",
+        tabBarActiveTintColor: Colors.Primary2,
         tabBarInactiveTintColor: Colors.White,
         tabBarStyle: {
           backgroundColor: Colors.Primary,
+          borderTopWidth: 0,
         },
       }}
     >
@@ -41,7 +43,7 @@ const Tabs = () => {
               name={
                 focused ? "map-marker-multiple" : "map-marker-multiple-outline"
               }
-              size={IconSize + 5}
+              size={IconSize + 3}
               color={focused ? IconFocusedColor : IconColor}
             ></MaterialCommunityIcons>
           ),
@@ -82,8 +84,8 @@ const Tabs = () => {
         }}
       />
       <Tab.Screen
-        name="screen3"
-        component={Screen3}
+        name="infoScreen"
+        component={infoScreen}
         options={{
           tabBarLabel: "Info",
           tabBarIcon: ({ focused }) => (
@@ -98,7 +100,5 @@ const Tabs = () => {
     </Tab.Navigator>
   );
 };
-
-const SomeIcon = ({ focused }) => {};
 
 export default Tabs;

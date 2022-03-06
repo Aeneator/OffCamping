@@ -1,6 +1,6 @@
 import React from "react";
 import { TouchableOpacity, View, StyleSheet } from "react-native";
-
+import Colors from "../CustomObjects/Colors.js";
 import { Shadow } from "react-native-shadow-2";
 
 import CText from "../CustomObjects/CustomText";
@@ -41,10 +41,10 @@ const styles = StyleSheet.create({
     position: "absolute",
     alignSelf: "center",
 
-    backgroundColor: "white",
-    borderRadius: 20,
-    borderWidth: 1,
-    borderColor: "rgba(0, 0, 0, 0.1)",
+    backgroundColor: Colors.Primary,
+    borderRadius: 10,
+    borderWidth: 2,
+    borderColor: Colors.Primary2,
     overflow: "hidden",
   },
 
@@ -54,8 +54,8 @@ const styles = StyleSheet.create({
   },
 
   text: {
-    color: "#404040",
-    textShadowColor: "rgba(0, 0, 0, 0.6)",
+    color: Colors.Primary2,
+    textShadowColor: "rgba(0, 0, 0, 0.4)",
     textShadowOffset: { width: -1, height: 1 },
   },
 });

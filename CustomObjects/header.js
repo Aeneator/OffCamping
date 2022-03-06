@@ -6,6 +6,7 @@ import {
   StatusBar,
   FocusAwareStatusBar,
 } from "react-native";
+import Colors from "./Colors";
 import CText from "./CustomText";
 
 const CHeader = (props) => {
@@ -15,15 +16,9 @@ const CHeader = (props) => {
       style={{
         ...styles.headerBox,
         ...props.HeaderStyle,
-        height: StatusBar.currentHeight * 1.05,
+        height: "7%",
       }}
-    >
-      {/* 
-      <CText
-        text={props.titleText}
-        style={{ ...styles.headerText, ...props.TextStyle }}
-      /> */}
-    </View>
+    ></View>
   );
 };
 
@@ -36,7 +31,7 @@ const styles = StyleSheet.create({
     top: 0,
     width: "100%",
 
-    backgroundColor: "white",
+    backgroundColor: Colors.Primary,
 
     borderBottomLeftRadius: 4,
     borderBottomRightRadius: 4,

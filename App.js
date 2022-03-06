@@ -5,7 +5,7 @@ import AppLoading from "expo-app-loading";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 
-import Tabs from "./navigation/tabs";
+import Tabs from "./MainScreens/tabs.js";
 import guidePage1 from "./MapGuideFiles/guidePage1.js";
 import guidePage2 from "./MapGuideFiles/guidePage2.js";
 import guidePage3 from "./MapGuideFiles/guidePage3.js";

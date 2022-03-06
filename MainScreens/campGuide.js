@@ -17,6 +17,7 @@ import { Shadow } from "react-native-shadow-2";
 
 import CText from "../CustomObjects/CustomText";
 import CHeader from "../CustomObjects/header";
+import Colors from "../CustomObjects/Colors";
 
 import DuringCampImg from "../MapGuideFiles/GuideImages/DuringCamping.png";
 import BeforeCampImg from "../MapGuideFiles/GuideImages/BeforeCamping.png";
@@ -30,14 +31,20 @@ function FocusAwareStatusBar(props) {
 }
 
 const PickButton = ({ onPressFunction, Text, height, width, TheImage }) => {
+  let CardWidth = width / 1.4;
   return (
-    <View style={{ marginHorizontal: width / 7, marginTop: height / 10 }}>
+    <View
+      style={{
+        marginHorizontal: (width - CardWidth) / 2,
+        alignSelf: "center",
+      }}
+    >
       <Shadow>
         <View
           style={{
             ...styles.button,
             height: height / 1.8,
-            width: width / 1.4,
+            width: CardWidth,
           }}
         >
           <TouchableOpacity
@@ -114,7 +121,7 @@ function CampGuide({ navigation }) {
 
           <FocusAwareStatusBar
             barStyle="light-content"
-            backgroundColor="black"
+            backgroundColor={Colors.Primary}
           ></FocusAwareStatusBar>
         </ScrollView>
       </ImageBackground>

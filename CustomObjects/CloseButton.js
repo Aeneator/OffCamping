@@ -11,6 +11,7 @@ const CloseButton = ({ onpress, newStyle }) => {
           flex: 1,
           alignItems: "center",
           justifyContent: "center",
+          //overflow: "hidden",
         }}
         onPress={() => {
           onpress(false);
