@@ -29,7 +29,7 @@ function FocusAwareStatusBar(props) {
     />
   );
 }
-
+//Sup
 function Home({ navigation }) {
   const { height, width } = useWindowDimensions();
   function navigationHandler(lat, long, zoom) {
