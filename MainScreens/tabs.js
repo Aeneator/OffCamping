@@ -19,7 +19,6 @@ const IconSize = 20;
 const IconColor = Colors.White;
 
 const Tabs = () => {
-  //var IconSize = "20%";
   return (
     <Tab.Navigator
       screenOptions={{

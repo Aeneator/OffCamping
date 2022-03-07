@@ -32,6 +32,7 @@ function MapScreen({ route, navigation }) {
   const { height, width } = useWindowDimensions();
 
   // Options Menu
+  const [Radius, setRadius] = useState(50000); // Raza este in metri
   const [OptionsVisible, setOptionsVisible] = useState(false);
   const [OptionsBG, setOptionsBG] = useState(true);
   const [SelectedMapType, setSelectedMapType] = useState("standard");
@@ -41,7 +42,6 @@ function MapScreen({ route, navigation }) {
   const [FullLocationPopUp, setFullLocationPopUp] = useState(false);
 
   // Markers
-  const [Radius, setRadius] = useState(50000); // Raza este in metri
   const [UserCenter, setUserCenter] = useState({ latitude: 0, longitude: 0 });
   const [MarkerInfo, setMarkerInfo] = useState({
     title: "",
