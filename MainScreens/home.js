@@ -9,7 +9,7 @@ import {
 } from "react-native";
 import { useIsFocused } from "@react-navigation/native";
 import Colors from "../CustomObjects/Colors";
-
+import { LinearGradient } from "expo-linear-gradient";
 import BItem from "../HomeScreenFiles/ItemButton";
 import CHeader from "../CustomObjects/header.js";
 import CText from "../CustomObjects/CustomText.js";
@@ -58,44 +58,49 @@ function Home({ navigation }) {
   };
 
   return (
-    <View style={styles.screen}>
-      <CHeader
-        titleText={"Camping 101"}
-        HeaderStyle={{ position: "relative" }}
-      />
-      <FlatList
-        contentContainerStyle={{ paddingTop: StatusBar.currentHeight }}
-        data={informatii}
-        renderItem={renderItem}
-        showsVerticalScrollIndicator={false}
-        ListHeaderComponent={
-          <CText
-            text="Regiuni"
-            style={{
-              fontSize: width / 7,
-              color: Colors.Primary,
-              textShadowColor: "rgba(0,0,0,0.2)",
-              textAlign: "center",
-              marginBottom: "4%",
-            }}
-          />
-        }
-      />
+    <LinearGradient
+      colors={[Colors.Primary, "transparent"]}
+      end={{ x: 0, y: 0.14 }}
+      style={{ flex: 1 }}
+      backgroundColor={Colors.White}
+    >
+      <View
+        style={{
+          flex: 1,
+          alignItems: "center",
+        }}
+      >
+        <CHeader
+          titleText={"Camping 101"}
+          HeaderStyle={{ position: "relative" }}
+        />
 
-      <FocusAwareStatusBar
-        backgroundColor={Colors.Primary}
-        barStyle="light-content"
-      ></FocusAwareStatusBar>
-    </View>
+        <FlatList
+          contentContainerStyle={{ paddingTop: StatusBar.currentHeight }}
+          data={informatii}
+          renderItem={renderItem}
+          showsVerticalScrollIndicator={false}
+          ListHeaderComponent={
+            <CText
+              text="Regiuni"
+              style={{
+                fontSize: width / 7,
+                color: Colors.Secondary2,
+                textShadowColor: Colors.Secondary,
+                textAlign: "center",
+                marginBottom: "4%",
+              }}
+            />
+          }
+        />
+
+        <FocusAwareStatusBar
+          backgroundColor={Colors.Primary}
+          barStyle="light-content"
+        ></FocusAwareStatusBar>
+      </View>
+    </LinearGradient>
   );
 }
-
-const styles = StyleSheet.create({
-  screen: {
-    flex: 1,
-    backgroundColor: "#f5f5f5",
-    alignItems: "center",
-  },
-});
 
 export default Home;

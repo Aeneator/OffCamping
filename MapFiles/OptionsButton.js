@@ -2,6 +2,7 @@ import React from "react";
 import { TouchableOpacity, View, Image } from "react-native";
 
 import OptionsImg from "../assets/ImageNeeds/options.png";
+import Colors from "../CustomObjects/Colors";
 
 const OptionsButton = ({
   onpress,
@@ -15,7 +16,7 @@ const OptionsButton = ({
     <View
       style={[
         {
-          backgroundColor: "white",
+          backgroundColor: Colors.Primary,
           aspectRatio: 1 / 1,
           height: "100%",
           marginRight: width / 30,
@@ -38,7 +39,11 @@ const OptionsButton = ({
       >
         <Image
           source={{ uri: Image.resolveAssetSource(OptionsImg).uri }}
-          style={{ height: "60%", aspectRatio: 1 / 1, tintColor: "gray" }}
+          style={{
+            height: "60%",
+            aspectRatio: 1 / 1,
+            tintColor: Colors.Secondary2,
+          }}
         />
       </TouchableOpacity>
     </View>

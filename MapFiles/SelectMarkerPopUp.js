@@ -3,6 +3,7 @@ import { TouchableOpacity, View, StyleSheet, Image } from "react-native";
 
 import { Shadow } from "react-native-shadow-2";
 import CText from "../CustomObjects/CustomText";
+import Colors from "../CustomObjects/Colors";
 
 const SelectMarkerPopUp = (
   MarkerPopUp,
@@ -22,7 +23,7 @@ const SelectMarkerPopUp = (
               width: width / 1.03,
               overflow: "hidden",
               borderRadius: 10,
-              backgroundColor: "white",
+              backgroundColor: Colors.Primary,
             }}
           >
             <TouchableOpacity
@@ -65,7 +66,7 @@ const SelectMarkerPopUp = (
 const Styles = StyleSheet.create({
   text: {
     fontSize: 20,
-    color: "gray",
+    color: Colors.Secondary2,
     textShadowOffset: { width: -1, height: 1 },
   },
 });

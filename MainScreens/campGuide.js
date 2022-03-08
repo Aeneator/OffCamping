@@ -88,7 +88,7 @@ function CampGuide({ navigation }) {
             textShadowOffset: { width: -1.1, height: 1.1 },
             textShadowRadius: 1,
           }}
-          text={"Camping 101"}
+          text={"CAMPING 101"}
         />
         <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
           <PickButton

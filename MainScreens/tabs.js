@@ -14,7 +14,7 @@ import Colors from "../CustomObjects/Colors";
 
 const Tab = createBottomTabNavigator();
 
-const IconFocusedColor = Colors.Primary2;
+const IconFocusedColor = Colors.Secondary2;
 const IconSize = 20;
 const IconColor = Colors.White;
 
@@ -23,7 +23,7 @@ const Tabs = () => {
     <Tab.Navigator
       screenOptions={{
         headerShown: false,
-        tabBarActiveTintColor: Colors.Primary2,
+        tabBarActiveTintColor: Colors.Secondary2,
         tabBarInactiveTintColor: Colors.White,
         tabBarStyle: {
           backgroundColor: Colors.Primary,

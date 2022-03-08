@@ -1,9 +1,9 @@
 const Colors = {
-  Primary: "rgba(30,52,73,255)",
-  Primary2: "rgb(97,152,191)",
-  Secondary: "white",
-  Secondary2: "rgba(50,120,68,255)",
-  White: "rgb(234,239,237)",
-  Black: "rgb(43,44,60)",
+  Primary: "#1e3449",
+  Primary2: "#8AC6FF",
+  Secondary: "#A67628",
+  Secondary2: "#F2BF6B",
+  White: "#e3f1ff",
+  Black: "#091017",
 };
 export default Colors;

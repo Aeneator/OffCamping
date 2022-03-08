@@ -6,6 +6,7 @@ import {
   ImageBackground,
   useWindowDimensions,
 } from "react-native";
+import Colors from "../CustomObjects/Colors";
 
 import CText from "../CustomObjects/CustomText";
 
@@ -36,13 +37,14 @@ const styles = StyleSheet.create({
     overflow: "hidden",
 
     borderRadius: 10,
+    alignSelf: "center",
 
     elevation: 5,
   },
 
   titleText: {
     fontSize: 36,
-    color: "white",
+    color: Colors.White,
     textAlign: "center",
   },
 

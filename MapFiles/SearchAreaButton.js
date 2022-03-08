@@ -43,8 +43,8 @@ const styles = StyleSheet.create({
 
     backgroundColor: Colors.Primary,
     borderRadius: 10,
-    borderWidth: 2,
-    borderColor: Colors.Primary2,
+    //borderWidth: 2,
+    //borderColor: Colors.Primary2,
     overflow: "hidden",
   },
 
@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
   },
 
   text: {
-    color: Colors.Primary2,
+    color: Colors.Secondary2,
     textShadowColor: "rgba(0, 0, 0, 0.4)",
     textShadowOffset: { width: -1, height: 1 },
   },
