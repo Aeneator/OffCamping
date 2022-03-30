@@ -7,8 +7,8 @@ const CText = (props) => {
 
 const styles = StyleSheet.create({
   DefaultText: {
-    fontFamily: "Roboto-Regular",
-    fontSize: 60,
+    fontFamily: "Poppins-Regular",
+    fontSize: 30,
     textShadowColor: "rgba(0, 0, 0, 1)",
     textShadowOffset: { width: -1.7, height: 1.7 },
     textShadowRadius: 1,

@@ -24,6 +24,8 @@ import BeforeCampImg from "../MapGuideFiles/GuideImages/BeforeCamping.png";
 import AfterCampImg from "../MapGuideFiles/GuideImages/AfterCamping.png";
 import GuideBackground from "../MapGuideFiles/GuideImages/GuideScreenBackGround.png";
 
+import CTextHeader from "../CustomObjects/CTextHeader";
+
 function FocusAwareStatusBar(props) {
   const isFocused = useIsFocused();
 
@@ -36,7 +38,6 @@ const PickButton = ({ onPressFunction, Text, height, width, TheImage }) => {
     <View
       style={{
         marginHorizontal: (width - CardWidth) / 2,
-        alignSelf: "center",
       }}
     >
       <Shadow>
@@ -54,7 +55,7 @@ const PickButton = ({ onPressFunction, Text, height, width, TheImage }) => {
             <BackgroundImage
               source={{ uri: Image.resolveAssetSource(TheImage).uri }}
               resizeMode="contain"
-              style={{ height: "100%", width: "100%", tintColor: "gray" }}
+              style={{ height: "100%", width: "100%" }}
             />
           </TouchableOpacity>
         </View>
@@ -68,64 +69,62 @@ function CampGuide({ navigation }) {
   const { height, width } = useWindowDimensions();
 
   return (
-    <View style={styles.screen}>
-      <ImageBackground
-        source={{ uri: Image.resolveAssetSource(GuideBackground).uri }}
-        style={{ height: "100%", width: "100%" }}
+    <ImageBackground
+      source={{ uri: Image.resolveAssetSource(GuideBackground).uri }}
+      style={{
+        height: "100%",
+        width: "100%",
+      }}
+    >
+      <CHeader HeaderStyle={{ position: "relative" }} />
+      <CTextHeader
+        style={{
+          fontSize: width / 8,
+          marginTop: height / 15,
+          color: "white",
+          alignSelf: "center",
+        }}
+        text={"CAMPING 101"}
+      />
+      <ScrollView
+        horizontal={true}
+        showsHorizontalScrollIndicator={false}
+        style={{ marginTop: "10%" }}
       >
-        <CHeader
-          titleText={"Camping 101"}
-          HeaderStyle={{ position: "relative" }}
-        />
-
-        <CText
-          style={{
-            fontSize: 50,
-            marginTop: height / 30,
-            color: "white",
-            textAlign: "center",
-            textShadowColor: "rgba(0, 0, 0, 0.5)",
-            textShadowOffset: { width: -1.1, height: 1.1 },
-            textShadowRadius: 1,
+        <PickButton
+          Text={"Before Camping"}
+          TheImage={BeforeCampImg}
+          height={height}
+          width={width}
+          onPressFunction={() => {
+            navigation.navigate("guidePage1");
           }}
-          text={"CAMPING 101"}
         />
-        <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-          <PickButton
-            Text={"Before Camping"}
-            TheImage={BeforeCampImg}
-            height={height}
-            width={width}
-            onPressFunction={() => {
-              navigation.navigate("guidePage1");
-            }}
-          />
-          <PickButton
-            Text={"During Camping"}
-            TheImage={DuringCampImg}
-            height={height}
-            width={width}
-            onPressFunction={() => {
-              navigation.navigate("guidePage2");
-            }}
-          />
-          <PickButton
-            Text={"After Camping"}
-            TheImage={AfterCampImg}
-            height={height}
-            width={width}
-            onPressFunction={() => {
-              navigation.navigate("guidePage3");
-            }}
-          />
+        <PickButton
+          Text={"During Camping"}
+          TheImage={DuringCampImg}
+          height={height}
+          width={width}
+          onPressFunction={() => {
+            navigation.navigate("guidePage2");
+          }}
+        />
+        <PickButton
+          Text={"After Camping"}
+          TheImage={AfterCampImg}
+          height={height}
+          width={width}
+          onPressFunction={() => {
+            navigation.navigate("guidePage3");
+          }}
+        />
 
-          <FocusAwareStatusBar
-            barStyle="light-content"
-            backgroundColor={Colors.Primary}
-          ></FocusAwareStatusBar>
-        </ScrollView>
-      </ImageBackground>
-    </View>
+        <FocusAwareStatusBar
+          barStyle="light-content"
+          backgroundColor={Colors.Primary}
+        ></FocusAwareStatusBar>
+      </ScrollView>
+    </ImageBackground>
   );
 }
 
@@ -134,7 +133,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff",
 
-    alignItems: "center",
+    //alignItems: "center",
   },
 
   button: {

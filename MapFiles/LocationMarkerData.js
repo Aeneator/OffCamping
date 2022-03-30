@@ -9,8 +9,9 @@ import ImgCabana_Curmatura from "./MarkerImages/Cabana_Curmatura.jpg";
 export default [
   {
     id: "-1",
-    nume: "Marker de Test",
-    descriere: "Testant",
+    nume: "Marker de Test foarte lung",
+    descriere:
+      "Am scris aceasta propozitie destul de lunga pentru a testa functionalitatea text wrapping-ului",
     imagine:
       "https://dl.airtable.com/kS70JmeETumDB16j3yCl_large_hipcamp.com.jpg",
     latitudine: 45.538212,

@@ -72,13 +72,10 @@ function Home({ navigation }) {
           alignItems: "center",
         }}
       >
-        <CHeader
-          titleText={"Camping 101"}
-          HeaderStyle={{ position: "relative" }}
-        />
+        <CHeader HeaderStyle={{ position: "relative" }} />
 
         <FlatList
-          contentContainerStyle={{ paddingTop: StatusBar.currentHeight }}
+          contentContainerStyle={{ paddingTop: StatusBar.currentHeight * 1 }}
           data={informatii}
           renderItem={renderItem}
           showsVerticalScrollIndicator={false}

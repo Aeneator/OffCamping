@@ -4,6 +4,7 @@ import Colors from "../CustomObjects/Colors.js";
 import { Shadow } from "react-native-shadow-2";
 
 import CText from "../CustomObjects/CustomText";
+import CTextHeader from "../CustomObjects/CTextHeader.js";
 
 const SearchAreaButton = ({
   MarkerPopUp,
@@ -26,7 +27,7 @@ const SearchAreaButton = ({
             }
           }}
         >
-          <CText
+          <CTextHeader
             text="Cauta in zona asta"
             style={{ ...styles.text, fontSize: width / 15 }}
           />
@@ -56,7 +57,6 @@ const styles = StyleSheet.create({
   text: {
     color: Colors.Black,
     textShadowColor: "rgba(0, 0, 0, 0.4)",
-    textShadowOffset: { width: -1, height: 1 },
   },
 });
 
