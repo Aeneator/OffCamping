@@ -1,14 +1,14 @@
 {
   "expo": {
-    "name": "OffCamp",
-    "slug": "OffCamp",
+    "name": "OffCamping",
+    "slug": "OffCamping",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#e87200"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -22,8 +22,9 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
-      }
+        "backgroundColor": "#e87200"
+      },
+      "package": "off.camp"
     },
     "web": {
       "favicon": "./assets/favicon.png"

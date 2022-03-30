@@ -61,8 +61,6 @@ function MapScreen({ route, navigation }) {
 
   let firstLoad = route.params.firstLoad;
 
-  console.log(cont++);
-
   if (firstLoad) {
     UserRegion = {
       latitude: route.params.latitudine,

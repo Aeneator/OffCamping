@@ -212,29 +212,6 @@ const MarkerScreen = ({
               })}
             </View>
 
-            <TouchableOpacity
-              style={{
-                alignItems: "center",
-                justifyContent: "center",
-                height: height / 13,
-                width: width / 1.5,
-              }}
-              onPress={() => {
-                console.log("test");
-                fetch("Your URL to fetch data from");
-              }}
-            >
-              <CText
-                text="Apasa-ma"
-                style={{
-                  color: "#404040",
-                  textShadowColor: "rgba(0, 0, 0, 0.6)",
-                  textShadowOffset: { width: -1, height: 1 },
-                  fontSize: width / 15,
-                }}
-              />
-            </TouchableOpacity>
-
             <CText text={""} style={{ color: "black" }} />
             <CText text={""} style={{ color: "black" }} />
             <CText text={""} style={{ color: "black" }} />
