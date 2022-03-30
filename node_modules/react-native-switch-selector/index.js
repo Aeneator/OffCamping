@@ -143,6 +143,8 @@ export default class SwitchSelector extends Component {
       disabled,
       buttonMargin,
       options,
+      accessibilityLabel,
+      testID,
     } = this.props;
 
     const { selected, sliderWidth } = this.state;
@@ -153,7 +155,7 @@ export default class SwitchSelector extends Component {
       return (
         <TouchableOpacity
           key={index}
-          disabled={disabled}
+          disabled={disabled || element.disabled}
           style={[
             styles.button,
             isSelected ? selectedTextContainerStyle : textContainerStyle,
@@ -199,8 +201,8 @@ export default class SwitchSelector extends Component {
     return (
       <View
         style={[{ flexDirection: 'row' }, style]}
-        accessibilityLabel={this.props.accessibilityLabel}
-        testID={this.props.testID}
+        accessibilityLabel={accessibilityLabel}
+        testID={testID}
       >
         <View {...this.panResponder.panHandlers} style={{ flex: 1 }}>
           <View
@@ -243,8 +245,7 @@ export default class SwitchSelector extends Component {
                             inputRange: [0, 1],
                             outputRange: [
                               hasPadding ? valuePadding : 0,
-                              sliderWidth
-                                - (hasPadding ? valuePadding : 0),
+                              sliderWidth - (hasPadding ? valuePadding : 0),
                             ],
                           }),
                         },
