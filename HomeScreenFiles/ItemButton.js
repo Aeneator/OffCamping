@@ -37,9 +37,9 @@ const styles = StyleSheet.create({
     overflow: "hidden",
 
     borderRadius: 10,
+    borderWidth: 3,
+    borderColor: Colors.Primary,
     alignSelf: "center",
-
-    elevation: 5,
   },
 
   titleText: {
@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
 
   blackOverlay: {
     flex: 1,
-    backgroundColor: "rgba(26, 26, 26, 0.3)",
+    backgroundColor: "rgba(26, 26, 26, 0.4)",
   },
 });
 

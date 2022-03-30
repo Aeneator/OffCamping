@@ -42,7 +42,7 @@ const OptionsButton = ({
           style={{
             height: "60%",
             aspectRatio: 1 / 1,
-            tintColor: Colors.Secondary2,
+            tintColor: Colors.Black,
           }}
         />
       </TouchableOpacity>

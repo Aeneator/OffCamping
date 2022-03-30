@@ -1,9 +1,9 @@
 const Colors = {
-  Primary: "#1e3449",
-  Primary2: "#8AC6FF",
-  Secondary: "#A67628",
-  Secondary2: "#F2BF6B",
+  Primary: "#e67100",
+  Primary2: "#fcb246",
+  Secondary: "#f1d09f",
+  Secondary2: "#72624c",
   White: "#e3f1ff",
-  Black: "#091017",
+  Black: "#000000",
 };
 export default Colors;

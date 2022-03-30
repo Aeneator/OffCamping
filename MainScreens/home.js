@@ -4,8 +4,10 @@ import {
   FlatList,
   StyleSheet,
   useWindowDimensions,
+  Image,
   Text,
   StatusBar,
+  ImageBackground,
 } from "react-native";
 import { useIsFocused } from "@react-navigation/native";
 import Colors from "../CustomObjects/Colors";
@@ -13,6 +15,8 @@ import { LinearGradient } from "expo-linear-gradient";
 import BItem from "../HomeScreenFiles/ItemButton";
 import CHeader from "../CustomObjects/header.js";
 import CText from "../CustomObjects/CustomText.js";
+
+import HomeBackground from "../HomeScreenFiles/Imagini/HomeScreenBackGround.png";
 
 import informatii from "../HomeScreenFiles/locationButtonData.js";
 
@@ -58,11 +62,9 @@ function Home({ navigation }) {
   };
 
   return (
-    <LinearGradient
-      colors={[Colors.Primary, "transparent"]}
-      end={{ x: 0, y: 0.14 }}
-      style={{ flex: 1 }}
-      backgroundColor={Colors.White}
+    <ImageBackground
+      source={{ uri: Image.resolveAssetSource(HomeBackground).uri }}
+      style={{ height: "100%", width: "100%" }}
     >
       <View
         style={{
@@ -85,8 +87,8 @@ function Home({ navigation }) {
               text="Regiuni"
               style={{
                 fontSize: width / 7,
-                color: Colors.Secondary2,
-                textShadowColor: Colors.Secondary,
+                color: Colors.Primary,
+                textShadowColor: Colors.Primary2,
                 textAlign: "center",
                 marginBottom: "4%",
               }}
@@ -99,7 +101,7 @@ function Home({ navigation }) {
           barStyle="light-content"
         ></FocusAwareStatusBar>
       </View>
-    </LinearGradient>
+    </ImageBackground>
   );
 }
 

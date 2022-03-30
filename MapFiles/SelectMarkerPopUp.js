@@ -3,6 +3,7 @@ import { TouchableOpacity, View, StyleSheet, Image } from "react-native";
 
 import { Shadow } from "react-native-shadow-2";
 import CText from "../CustomObjects/CustomText";
+import CTextBody from "../CustomObjects/CTextBody";
 import Colors from "../CustomObjects/Colors";
 
 const SelectMarkerPopUp = (

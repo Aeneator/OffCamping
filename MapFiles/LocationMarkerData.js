@@ -11,7 +11,8 @@ export default [
     id: "-1",
     nume: "Marker de Test",
     descriere: "Testant",
-    imagine: Image.resolveAssetSource(Img4).uri,
+    imagine:
+      "https://dl.airtable.com/kS70JmeETumDB16j3yCl_large_hipcamp.com.jpg",
     latitudine: 45.538212,
     longitudine: 25.219833,
     facilitati: {
