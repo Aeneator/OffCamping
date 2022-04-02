@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, View, useWindowDimensions } from "react-native";
 
-function guidePage1({ navigation }) {
+function GuidePage2({ navigation }) {
   const { height, width } = useWindowDimensions();
 
   return (
@@ -20,4 +20,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default guidePage1;
+export default GuidePage2;

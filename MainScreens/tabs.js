@@ -5,10 +5,10 @@ import { Ionicons } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
-import Home from "./home";
-import MapScreen from "./map";
-import CampGuide from "./campGuide";
-import infoScreen from "./infoScreen";
+import Home from "./Home";
+import MapScreen from "./Map";
+import CampGuide from "./CampGuide";
+import infoScreen from "./InfoScreen";
 
 import Colors from "../CustomObjects/Colors";
 

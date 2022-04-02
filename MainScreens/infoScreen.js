@@ -79,7 +79,7 @@ const ThisHyperLink = (props) => {
   );
 };
 
-function infoScreen({ navigation }) {
+function InfoScreen({ navigation }) {
   const { height, width } = useWindowDimensions();
 
   return (
@@ -185,4 +185,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default infoScreen;
+export default InfoScreen;

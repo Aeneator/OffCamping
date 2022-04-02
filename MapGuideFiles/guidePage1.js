@@ -8,7 +8,7 @@ import {
 } from "react-native";
 import CTextBody from "../CustomObjects/CTextBody";
 
-function guidePage1({ navigation }) {
+function GuidePage1({ navigation }) {
   const { height, width } = useWindowDimensions();
 
   return (
@@ -45,4 +45,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default guidePage1;
+export default GuidePage1;

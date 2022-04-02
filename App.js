@@ -6,9 +6,9 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 
 import Tabs from "./MainScreens/tabs.js";
-import guidePage1 from "./MapGuideFiles/guidePage1.js";
-import guidePage2 from "./MapGuideFiles/guidePage2.js";
-import guidePage3 from "./MapGuideFiles/guidePage3.js";
+import GuidePage1 from "./MapGuideFiles/GuidePage1.js";
+import GuidePage2 from "./MapGuideFiles/GuidePage2.js";
+import GuidePage3 from "./MapGuideFiles/GuidePage3.js";
 
 const Stack = createStackNavigator();
 
@@ -51,18 +51,18 @@ export default function App() {
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name="guidePage1"
-          component={guidePage1}
+          name="GuidePage1"
+          component={GuidePage1}
           options={{ title: "Before Camping" }}
         />
         <Stack.Screen
-          name="guidePage2"
-          component={guidePage2}
+          name="GuidePage2"
+          component={GuidePage2}
           options={{ title: "During Camping" }}
         />
         <Stack.Screen
-          name="guidePage3"
-          component={guidePage3}
+          name="GuidePage3"
+          component={GuidePage3}
           options={{ title: "After Camping" }}
         />
       </Stack.Navigator>

@@ -97,7 +97,7 @@ function CampGuide({ navigation }) {
           height={height}
           width={width}
           onPressFunction={() => {
-            navigation.navigate("guidePage1");
+            navigation.navigate("GuidePage1");
           }}
         />
         <PickButton
@@ -106,7 +106,7 @@ function CampGuide({ navigation }) {
           height={height}
           width={width}
           onPressFunction={() => {
-            navigation.navigate("guidePage2");
+            navigation.navigate("GuidePage2");
           }}
         />
         <PickButton
@@ -115,7 +115,7 @@ function CampGuide({ navigation }) {
           height={height}
           width={width}
           onPressFunction={() => {
-            navigation.navigate("guidePage3");
+            navigation.navigate("GuidePage3");
           }}
         />
 
