@@ -6,7 +6,7 @@ import CText from "../CustomObjects/CustomText";
 
 import Colors from "../CustomObjects/Colors";
 import CTextBody from "../CustomObjects/CTextBody";
-import CTextHeader from "../CustomObjects/CTextHeader";
+import CTextHeaderFit from "../CustomObjects/CTextHeaderFit";
 const SelectMarkerPopUp = (
   MarkerPopUp,
   setMarkerPopUp,
@@ -54,12 +54,12 @@ const SelectMarkerPopUp = (
                   marginHorizontal: height / 180,
                 }}
               >
-                <CTextHeader
-                  style={{ fontSize: width / 15, color: Colors.Black }}
+                <CTextHeaderFit
+                  style={{ fontSize: width / 20, color: Colors.Black }}
                   text={MarkerInfo.title}
                 />
                 <CTextBody
-                  style={{ fontSize: width / 20, color: Colors.Black }}
+                  style={{ fontSize: width / 23, color: Colors.Black }}
                   text={MarkerInfo.description}
                   NrOfLines={3}
                   ellipsizeMode="tail"

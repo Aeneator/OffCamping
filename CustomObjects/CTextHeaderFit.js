@@ -1,11 +1,11 @@
 import React from "react";
 import { Text, StyleSheet } from "react-native";
 
-const CTextHeader = (props) => {
+const CTextHeaderFit = (props) => {
   return (
     <Text
       style={[styles.DefaultText, props.style]}
-      adjustsFontSizeToFit
+      //adjustsFontSizeToFit
       numberOfLines={1}
     >
       {props.text}
@@ -23,4 +23,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default CTextHeader;
+export default CTextHeaderFit;

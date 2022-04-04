@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
   },
 
   text: {
-    color: Colors.Black,
+    color: Colors.White,
     textShadowColor: "rgba(0, 0, 0, 0.4)",
   },
 });

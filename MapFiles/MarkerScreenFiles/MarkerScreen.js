@@ -11,6 +11,9 @@ import {
   TouchableOpacity,
 } from "react-native";
 
+import CTextHeader from "../../CustomObjects/CTextHeader";
+import CTextBody from "../../CustomObjects/CTextBody";
+
 import { ScrollView } from "react-native-gesture-handler";
 import { Tooltip, Text } from "react-native-elements";
 
@@ -18,6 +21,7 @@ import CText from "../../CustomObjects/CustomText";
 import CloseButton from "../../CustomObjects/CloseButton.js";
 
 import TestImg from "./ImaginiFacilitati/test.png";
+import Colors from "../../CustomObjects/Colors";
 
 const CheckProperty = (MarkerInfo, id) => {
   switch (id) {
@@ -148,48 +152,70 @@ const MarkerScreen = ({
             />
             <ImageBackground
               source={{ uri: MarkerInfo.image }}
-              style={{ height: 200, width: "100%" }}
-            />
-            <CText
-              text={MarkerInfo.title}
               style={{
-                color: "black",
-                fontSize: width / 10,
-                textShadowColor: "rgba(0, 0, 0, 0.6)",
-                textShadowOffset: { width: -1, height: 1 },
+                height: 200,
+                width: "100%",
+
+                justifyContent: "flex-end",
               }}
-            />
-            <CText
-              text={
-                "(" + MarkerInfo.latitude + " , " + MarkerInfo.longitude + ")"
-              }
+            >
+              <View style={{ flexWrap: "wrap" }}>
+                <CText
+                  text={
+                    " lat:" +
+                    MarkerInfo.latitude +
+                    " , long:" +
+                    MarkerInfo.longitude +
+                    " "
+                  }
+                  style={{
+                    color: "rgba(255, 255, 255, 1)",
+                    fontSize: width / 22,
+                    textShadowColor: "rgba(0, 0, 0, 1)",
+                    textShadowOffset: { width: -1.3, height: 1.3 },
+                    textShadowRadius: 5,
+                    backgroundColor: "rgba(0, 0, 0, 0.25)",
+                  }}
+                />
+              </View>
+            </ImageBackground>
+            <View>
+              <CTextHeader
+                text={MarkerInfo.title}
+                style={{
+                  width: "90%",
+                  color: Colors.Black,
+                  fontSize: width / 10,
+                }}
+              />
+            </View>
+            <View
               style={{
-                color: "#404040",
-                fontSize: width / 15,
-                textShadowColor: "rgba(0, 0, 0, 0.6)",
-                textShadowOffset: { width: -1, height: 1 },
-              }}
-            />
-            <CText
-              text={"Descriere:"}
-              style={{
-                color: "gray",
-                fontSize: width / 13,
-                textShadowColor: "rgba(0, 0, 0, 0.8)",
-                textShadowOffset: { width: -1.3, height: 1.3 },
+                backgroundColor: "rgba(0,0,0,0.3)",
+                height: 2,
+                width: "95%",
+                alignSelf: "center",
               }}
             />
 
-            <CText
+            <CTextHeader
+              text={"Despre:"}
+              style={{
+                color: Colors.Black,
+                fontSize: width / 15,
+              }}
+            />
+
+            <CTextBody
               text={MarkerInfo.description}
               style={{
-                color: "gray",
-                fontSize: width / 13,
+                color: Colors.Black,
+                fontSize: width / 20,
                 textShadowColor: "rgba(0, 0, 0, 0.8)",
                 textShadowOffset: { width: -1.3, height: 1.3 },
               }}
             />
-            <View
+            {/* <View
               style={{
                 width: width / 1.02,
                 flexWrap: "wrap",
@@ -210,7 +236,7 @@ const MarkerScreen = ({
                   />
                 );
               })}
-            </View>
+            </View> */}
 
             <CText text={""} style={{ color: "black" }} />
             <CText text={""} style={{ color: "black" }} />
