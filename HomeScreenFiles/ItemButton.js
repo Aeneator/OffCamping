@@ -9,6 +9,8 @@ import {
 import Colors from "../CustomObjects/Colors";
 
 import CText from "../CustomObjects/CustomText";
+import CTextHeader from "../CustomObjects/CTextHeader";
+import CTextBody from "../CustomObjects/CTextBody";
 
 const BItem = ({ onPress, latitudine, longitudine, zoom, Nume, Imagine }) => {
   const { height, width } = useWindowDimensions();
@@ -23,7 +25,18 @@ const BItem = ({ onPress, latitudine, longitudine, zoom, Nume, Imagine }) => {
               onPress(latitudine, longitudine, zoom);
             }}
           >
-            <CText style={styles.titleText} text={Nume} />
+            <CTextHeader
+              style={{
+                fontSize: width / 14,
+                textShadowColor: "rgba(0, 0, 0, 1)",
+                textShadowOffset: { width: -2, height: 2 },
+                textShadowRadius: 1,
+
+                color: Colors.White,
+                textAlign: "center",
+              }}
+              text={Nume}
+            />
           </TouchableOpacity>
         </View>
       </ImageBackground>
@@ -50,7 +63,7 @@ const styles = StyleSheet.create({
 
   OpacityStyle: {
     flex: 1,
-    alignItems: "center",
+
     justifyContent: "center",
   },
 

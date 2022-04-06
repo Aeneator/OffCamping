@@ -15,6 +15,7 @@ import { LinearGradient } from "expo-linear-gradient";
 import BItem from "../HomeScreenFiles/ItemButton";
 import CHeader from "../CustomObjects/header.js";
 import CText from "../CustomObjects/CustomText.js";
+import CTextHeader from "../CustomObjects/CTextHeader";
 
 import HomeBackground from "../HomeScreenFiles/Imagini/HomeScreenBackGround.png";
 
@@ -33,7 +34,7 @@ function FocusAwareStatusBar(props) {
     />
   );
 }
-//Sup
+
 function Home({ navigation }) {
   const { height, width } = useWindowDimensions();
   function navigationHandler(lat, long, zoom) {
@@ -80,12 +81,14 @@ function Home({ navigation }) {
           renderItem={renderItem}
           showsVerticalScrollIndicator={false}
           ListHeaderComponent={
-            <CText
+            <CTextHeader
               text="Regiuni"
               style={{
                 fontSize: width / 7,
                 color: Colors.Primary,
-                textShadowColor: Colors.Primary2,
+                textShadowColor: Colors.Black,
+                textShadowOffset: { width: -1, height: 1 },
+                textShadowRadius: 10,
                 textAlign: "center",
                 marginBottom: "4%",
               }}

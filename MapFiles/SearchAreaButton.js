@@ -57,6 +57,9 @@ const styles = StyleSheet.create({
   text: {
     color: Colors.White,
     textShadowColor: "rgba(0, 0, 0, 0.4)",
+    textShadowColor: "rgba(0, 0, 0, 1)",
+    textShadowOffset: { width: -1, height: 1 },
+    textShadowRadius: 4,
   },
 });
 

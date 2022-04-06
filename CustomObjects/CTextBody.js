@@ -17,6 +17,7 @@ const styles = StyleSheet.create({
     fontFamily: "Poppins-Light",
     fontSize: 30,
     flexShrink: 1,
+    color: "#343434",
     textAlign: "center",
   },
 });

@@ -9,6 +9,7 @@ import {
   FlatList,
   StatusBar,
   TouchableOpacity,
+  Linking,
 } from "react-native";
 
 import CTextHeader from "../../CustomObjects/CTextHeader";
@@ -22,6 +23,30 @@ import CloseButton from "../../CustomObjects/CloseButton.js";
 
 import TestImg from "./ImaginiFacilitati/test.png";
 import Colors from "../../CustomObjects/Colors";
+import { Marker } from "react-native-svg";
+
+import DirectionsImg from "./directions.png";
+
+const openMapDirection = (latitude, longitude) => {
+  const url = Platform.select({
+    ios: `comgooglemaps://?center=${latitude},${longitude}&q=${latitude},${longitude}&zoom=14&views=traffic"`,
+    android: `geo://?q=${latitude},${longitude}`,
+  });
+  Linking.canOpenURL(url)
+    .then((supported) => {
+      if (supported) {
+        return Linking.openURL(url);
+      } else {
+        const browser_url = `https://www.google.de/maps/@${latitude},${longitude}`;
+        return Linking.openURL(browser_url);
+      }
+    })
+    .catch(() => {
+      if (Platform.OS === "ios") {
+        Linking.openURL(`maps://?q=${latitude},${longitude}`);
+      }
+    });
+};
 
 const CheckProperty = (MarkerInfo, id) => {
   switch (id) {
@@ -179,11 +204,13 @@ const MarkerScreen = ({
                 />
               </View>
             </ImageBackground>
-            <View>
+            <View style={{ width: "99%" }}>
               <CTextHeader
                 text={MarkerInfo.title}
                 style={{
-                  width: "90%",
+                  width: "100%",
+
+                  textAlign: "center",
                   color: Colors.Black,
                   fontSize: width / 10,
                 }}
@@ -215,6 +242,21 @@ const MarkerScreen = ({
                 textShadowOffset: { width: -1.3, height: 1.3 },
               }}
             />
+            <TouchableOpacity
+              onPress={() => {
+                openMapDirection(MarkerInfo.latitude, MarkerInfo.longitude);
+              }}
+              style={{ alignSelf: "flex-end" }}
+            >
+              <ImageBackground
+                source={{ uri: Image.resolveAssetSource(DirectionsImg).uri }}
+                style={{
+                  height: height / 12,
+                  aspectRatio: 1,
+                }}
+              />
+            </TouchableOpacity>
+
             {/* <View
               style={{
                 width: width / 1.02,

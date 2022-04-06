@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { StyleSheet } from "react-native";
 import * as Font from "expo-font";
 import AppLoading from "expo-app-loading";
 import { NavigationContainer } from "@react-navigation/native";
@@ -9,6 +9,8 @@ import Tabs from "./MainScreens/tabs.js";
 import GuidePage1 from "./MapGuideFiles/GuidePage1.js";
 import GuidePage2 from "./MapGuideFiles/GuidePage2.js";
 import GuidePage3 from "./MapGuideFiles/GuidePage3.js";
+
+import Colors from "./CustomObjects/Colors.js";
 
 const Stack = createStackNavigator();
 
@@ -53,19 +55,41 @@ export default function App() {
         <Stack.Screen
           name="GuidePage1"
           component={GuidePage1}
-          options={{ title: "Before Camping" }}
+          options={{
+            title: "Before Camping",
+            headerTitleStyle: styles.GuideScreensTitleStyle,
+            headerStyle: styles.GuideScreensStyle,
+          }}
         />
         <Stack.Screen
           name="GuidePage2"
           component={GuidePage2}
-          options={{ title: "During Camping" }}
+          options={{
+            title: "During Camping",
+            headerTitleStyle: styles.GuideScreensTitleStyle,
+            headerStyle: styles.GuideScreensStyle,
+          }}
         />
         <Stack.Screen
           name="GuidePage3"
           component={GuidePage3}
-          options={{ title: "After Camping" }}
+          options={{
+            title: "After Camping",
+            headerTitleStyle: styles.GuideScreensTitleStyle,
+            headerStyle: styles.GuideScreensStyle,
+          }}
         />
       </Stack.Navigator>
     </NavigationContainer>
   );
 }
+
+const styles = StyleSheet.create({
+  GuideScreensStyle: {
+    backgroundColor: Colors.Primary,
+  },
+  GuideScreensTitleStyle: {
+    fontFamily: "Poppins-Bold",
+    color: Colors.Black,
+  },
+});
