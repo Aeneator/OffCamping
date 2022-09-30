@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   View,
   ImageBackground,
@@ -24,6 +24,7 @@ import CloseButton from "../../CustomObjects/CloseButton.js";
 import TestImg from "./ImaginiFacilitati/test.png";
 import Colors from "../../CustomObjects/Colors";
 import { Marker } from "react-native-svg";
+import WeatherPopUp from "./WeatherPopUp";
 
 import DirectionsImg from "./directions.png";
 
@@ -146,6 +147,8 @@ const MarkerScreen = ({
 }) => {
   const { height, width } = useWindowDimensions();
 
+  const [ShowWeather, setShowWeather] = useState(false);
+
   return (
     <Modal
       visible={FullLocationPopUp}
@@ -154,6 +157,7 @@ const MarkerScreen = ({
       statusBarTranslucent={true}
       onRequestClose={() => {
         setFullLocationPopUp(false);
+        setShowWeather(false);
       }}
     >
       <View
@@ -209,38 +213,52 @@ const MarkerScreen = ({
                 text={MarkerInfo.title}
                 style={{
                   width: "100%",
-
                   textAlign: "center",
                   color: Colors.Black,
                   fontSize: width / 10,
+                  marginVertical: 20,
+                }}
+              />
+
+              <View
+                style={{
+                  backgroundColor: "rgba(0,0,0,0.3)",
+                  height: 2,
+                  width: "95%",
+                  alignSelf: "center",
+                }}
+              />
+
+              <CTextHeader
+                text={"Despre:"}
+                style={{
+                  alignSelf: "center",
+                  marginTop: 20,
+                  color: Colors.Black,
+                  fontSize: width / 15,
+                }}
+              />
+
+              <CTextBody
+                text={MarkerInfo.description}
+                style={{
+                  color: Colors.Black,
+                  fontSize: width / 20,
+                  marginBottom: 20,
+                  textShadowColor: "rgba(0, 0, 0, 0.8)",
+                  textShadowOffset: { width: -1.3, height: 1.3 },
                 }}
               />
             </View>
-            <View
-              style={{
-                backgroundColor: "rgba(0,0,0,0.3)",
-                height: 2,
-                width: "95%",
-                alignSelf: "center",
-              }}
-            />
+            {/*http://api.openweathermap.org/data/2.5/forecast?id=524901&appid={API key}*/}
 
-            <CTextHeader
-              text={"Despre:"}
-              style={{
-                color: Colors.Black,
-                fontSize: width / 15,
-              }}
-            />
-
-            <CTextBody
-              text={MarkerInfo.description}
-              style={{
-                color: Colors.Black,
-                fontSize: width / 20,
-                textShadowColor: "rgba(0, 0, 0, 0.8)",
-                textShadowOffset: { width: -1.3, height: 1.3 },
-              }}
+            <WeatherPopUp
+              height={height}
+              width={width}
+              ShowWeather={ShowWeather}
+              setShowWeather={setShowWeather}
+              lat={MarkerInfo.latitude}
+              long={MarkerInfo.longitude}
             />
             <TouchableOpacity
               onPress={() => {
@@ -256,7 +274,6 @@ const MarkerScreen = ({
                 }}
               />
             </TouchableOpacity>
-
             {/* <View
               style={{
                 width: width / 1.02,
@@ -279,7 +296,6 @@ const MarkerScreen = ({
                 );
               })}
             </View> */}
-
             <CText text={""} style={{ color: "black" }} />
             <CText text={""} style={{ color: "black" }} />
             <CText text={""} style={{ color: "black" }} />
@@ -294,6 +310,7 @@ const MarkerScreen = ({
         </ScrollView>
         <CloseButton
           onpress={setFullLocationPopUp}
+          onpress2={setShowWeather}
           newStyle={{
             marginTop: StatusBar.currentHeight * 1.1,
             marginLeft: 16,

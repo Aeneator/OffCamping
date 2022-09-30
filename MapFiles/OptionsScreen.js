@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
   Image,
   StyleSheet,
+  useWindowDimensions,
 } from "react-native";
 
 import { ScrollView } from "react-native-gesture-handler";
@@ -43,9 +44,8 @@ const OptionsScreen = ({
   Radius,
   OptionsBG,
   setOptionsBG,
-  width,
-  height,
 }) => {
+  const { height, width } = useWindowDimensions();
   return (
     <Modal
       visible={OptionsVisible}

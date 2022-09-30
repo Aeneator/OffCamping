@@ -1,17 +1,16 @@
 import React from "react";
-import { TouchableOpacity, View, Image } from "react-native";
+import {
+  TouchableOpacity,
+  View,
+  Image,
+  useWindowDimensions,
+} from "react-native";
 
 import OptionsImg from "../assets/ImageNeeds/options.png";
 import Colors from "../CustomObjects/Colors";
 
-const OptionsButton = ({
-  onpress,
-  newStyle,
-  OptionsBG,
-  setOptionsBG,
-  height,
-  width,
-}) => {
+const OptionsButton = ({ onpress, newStyle, OptionsBG, setOptionsBG }) => {
+  const { height, width } = useWindowDimensions();
   return (
     <View
       style={[

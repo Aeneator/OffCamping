@@ -3,7 +3,7 @@ import { TouchableOpacity, Image, View, StyleSheet } from "react-native";
 
 import CloseImg from "../assets/ImageNeeds/close-button.png";
 
-const CloseButton = ({ onpress, newStyle }) => {
+const CloseButton = ({ onpress, onpress2, newStyle }) => {
   return (
     <View style={[styles.ButtonStyle, newStyle]}>
       <TouchableOpacity
@@ -14,7 +14,8 @@ const CloseButton = ({ onpress, newStyle }) => {
           //overflow: "hidden",
         }}
         onPress={() => {
-          onpress(false);
+          if (onpress != null) onpress(false);
+          if (onpress2 != null) onpress2(false);
         }}
       >
         <Image

@@ -21,6 +21,8 @@ import MarkerScreen from "../MapFiles/MarkerScreenFiles/MarkerScreen.js";
 import OptionsButton from "../MapFiles/OptionsButton.js";
 import OptionsScreen from "../MapFiles/OptionsScreen.js";
 
+import GetLocationButton from "../MapFiles/GetLocationButton.js";
+
 let UserZoom = 1;
 let UserRegion = { latitude: 46.0243, longitude: 24.799112 };
 
@@ -36,6 +38,10 @@ function MapScreen({ route, navigation }) {
   const [OptionsVisible, setOptionsVisible] = useState(false);
   const [OptionsBG, setOptionsBG] = useState(true);
   const [SelectedMapType, setSelectedMapType] = useState("standard");
+
+  // User Location
+  const [location, setLocation] = useState(null);
+  const [errorMsg, setErrorMsg] = useState(null);
 
   // Marker PopUps
   const [MarkerPopUp, setMarkerPopUp] = useState(false);
@@ -91,6 +97,16 @@ function MapScreen({ route, navigation }) {
   };
 
   route.params.firstLoad = false;
+
+  const GoToLocation = (lat, long) => {
+    if (lat != null && long != null) {
+      UserRegion = {
+        latitude: lat,
+        longitude: long,
+      };
+      setUserCenter({ latitude: lat, longitude: long });
+    }
+  };
 
   return (
     <View style={{ flex: 1 }}>
@@ -166,7 +182,6 @@ function MapScreen({ route, navigation }) {
         style={{
           height: height / 11,
           width: width,
-
           marginTop: StatusBar.currentHeight * 1.1,
           position: "absolute",
           flexDirection: "row",
@@ -174,8 +189,6 @@ function MapScreen({ route, navigation }) {
         }}
       >
         <OptionsButton
-          height={height}
-          width={width}
           OptionsBG={OptionsBG}
           setOptionsBG={setOptionsBG}
           onpress={setOptionsVisible}
@@ -186,12 +199,18 @@ function MapScreen({ route, navigation }) {
         // BOTTOM BAR
         style={{ flex: 1, justifyContent: "flex-end" }}
       >
+        <GetLocationButton
+          MarkerPopUp={MarkerPopUp}
+          location={location}
+          setLocation={setLocation}
+          errorMsg={errorMsg}
+          setErrorMsg={setErrorMsg}
+          GoToLocation={GoToLocation}
+        />
         <SearchAreaButton
           MarkerPopUp={MarkerPopUp}
           setUserCenter={setUserCenter}
           UserRegion={UserRegion}
-          height={height}
-          width={width}
         />
 
         {SelectMarkerPopUp(
@@ -207,8 +226,6 @@ function MapScreen({ route, navigation }) {
         FullLocationPopUp={FullLocationPopUp}
         setFullLocationPopUp={setFullLocationPopUp}
         MarkerInfo={MarkerInfo}
-        width={width}
-        height={height}
       />
       <OptionsScreen
         OptionsVisible={OptionsVisible}
@@ -219,8 +236,6 @@ function MapScreen({ route, navigation }) {
         setOptionsBG={setOptionsBG}
         SelectedMapType={SelectedMapType}
         setSelectedMapType={setSelectedMapType}
-        width={width}
-        height={height}
       />
     </View>
   );

@@ -17,6 +17,7 @@
       "**/*"
     ],
     "ios": {
+     
       "supportsTablet": true
     },
     "android": {
@@ -29,10 +30,12 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#e87200"
       },
+      
       "package": "off.camp"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": ["@react-native-google-signin/google-signin"]
   }
 }

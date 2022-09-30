@@ -1,18 +1,18 @@
 import React from "react";
-import { TouchableOpacity, View, StyleSheet } from "react-native";
+import {
+  TouchableOpacity,
+  View,
+  StyleSheet,
+  useWindowDimensions,
+} from "react-native";
 import Colors from "../CustomObjects/Colors.js";
 import { Shadow } from "react-native-shadow-2";
 
 import CText from "../CustomObjects/CustomText";
 import CTextHeader from "../CustomObjects/CTextHeader.js";
 
-const SearchAreaButton = ({
-  MarkerPopUp,
-  setUserCenter,
-  UserRegion,
-  height,
-  width,
-}) => {
+const SearchAreaButton = ({ MarkerPopUp, setUserCenter, UserRegion }) => {
+  const { height, width } = useWindowDimensions();
   return (
     <View style={{ ...styles.container, bottom: height / 40 }}>
       <Shadow>
