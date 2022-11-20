@@ -1,0 +1,9 @@
+expo init (Name)
+>blank
+cd (Name)
+code .
+
+
+To Start:
+(In Terminal)
+npm start

@@ -1,0 +1,59 @@
+	Pe termen scurt (aprox 1-2 saptamani):
+Scaling obiecte pentru marimi diferite de ecran
+Restructurare cod 
+
+	Pe termen lung:
+Adaugat informatii despre vreme per locatie (research in API-uri)
+Cautare locatii in jurul User-ului (Locatie User)
+Ghid de camping (navigatia)
+Bottom Tabs (styling)
+Search Bar pentru locatii ()
+
+
+
+Altele:
+Home Screen
+Selectare regiunile importante
+(Stil lista/ Muntii Nostri)
+Main Menu
+
+
+Bara de jos:
+Stil muntii nostri
+(Locatii/Harta/Ghid Camping/Cont/Mai multe)
+
+
+
+
+
+
+
+
+Settings Button 
+(raza de afisare a locatiilor, tipul hartii)
+
+Locatii Salvate
+
+Calculator zile camping
+     Input:nr de zile petrecute
+     Outpur: litri de apa, echipament, etc
+
+
+Proprietati locatii:
+Poti face focul
+Poti ajunge cu mijloace de mers in comun
+Acces la apa
+Acces la electricitate
+Acces la trasee montane
+
+Surse de aprovizionare in apropiere: ex 1 , ex 2
+
+
+
+
+
+
+
+
+
+
